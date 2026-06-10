@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #c99618;
+    --gold-light: #e9b830;
+    --charcoal: #1a1816;
+    --cream: #faf6ef;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--charcoal);
+    color: var(--cream);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--gold);
+    color: var(--charcoal);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1816;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .heading-display {
+    @apply font-display text-cream leading-tight;
+  }
+
+  .heading-section {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl text-cream;
+  }
+
+  .text-body {
+    @apply font-body text-lg text-charcoal-300 leading-relaxed;
+  }
+
+  .gold-divider {
+    @apply w-16 h-px bg-gold-500 my-4;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-gold-500 text-charcoal-950 font-sans font-medium
+           px-8 py-4 text-sm tracking-widest uppercase
+           hover:bg-gold-400 active:scale-[0.98]
+           transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-gold-500 text-gold-500 font-sans font-medium
+           px-8 py-4 text-sm tracking-widest uppercase
+           hover:bg-gold-500 hover:text-charcoal-950
+           transition-all duration-300 cursor-pointer;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/10;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #e9b830 0%, #c99618 50%, #efca55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-noise {
+    position: relative;
+  }
+
+  .bg-noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
