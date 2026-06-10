@@ -5,7 +5,7 @@ export const reviews: Review[] = [
     id: 'r1',
     name: 'Isabelle Fontaine',
     role: 'Food Critic, Le Monde',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=120&q=80',
+    avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=120&q=80',
     rating: 5,
     text: 'An extraordinary dining experience that transcends the ordinary. Chef Laurent\'s mastery of French technique combined with global influences creates something truly singular. The wagyu tenderloin is the finest I\'ve had outside of Tokyo.',
     date: 'March 2024',
