@@ -86,7 +86,7 @@ export function HeroSection() {
 
           {/* Stats */}
           <div
-            className="flex gap-12 mt-16 pt-12 border-t border-charcoal-800/60"
+            className="flex gap-12 mt-10 pt-1 border-t border-charcoal-800/60"
             style={{ animation: 'fadeUp 0.8s ease 0.85s both' }}
           >
             {[
@@ -95,7 +95,7 @@ export function HeroSection() {
               { value: '1200', label: 'Bottles in Cellar' },
             ].map(({ value, label }) => (
               <div key={label}>
-                <div className="font-display text-3xl text-gold-400">{value}</div>
+                <div className="font-display text-4xl text-gold-400">{value}</div>
                 <div className="font-sans text-xs text-charcoal-400 uppercase tracking-widest mt-1">{label}</div>
               </div>
             ))}
