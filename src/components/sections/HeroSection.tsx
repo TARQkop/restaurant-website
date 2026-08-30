@@ -84,22 +84,27 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Stats */}
-          <div
-            className="flex gap-12 mt-10 pt-1 border-t border-charcoal-800/60"
-            style={{ animation: 'fadeUp 0.8s ease 0.85s both' }}
-          >
-            {[
-              { value: '2★', label: 'Michelin Stars' },
-              { value: '15+', label: 'Years of Excellence' },
-              { value: '1200', label: 'Bottles in Cellar' },
-            ].map(({ value, label }) => (
-              <div key={label}>
-                <div className="font-display text-4xl text-gold-400">{value}</div>
-                <div className="font-sans text-xs text-charcoal-400 uppercase tracking-widest mt-1">{label}</div>
-              </div>
-            ))}
-          </div>
+         {/* Stats */}
+            <div
+              className="flex items-start gap-8 sm:gap-12 lg:gap-16 mt-5 pt-4 border-t border-charcoal-800/60"
+              style={{ animation: 'fadeUp 0.8s ease 0.85s both' }}
+            >
+              {[
+                { value: '2★', label: 'Michelin Stars' },
+                { value: '15+', label: 'Years of Excellence' },
+                { value: '1200', label: 'Bottles in Cellar' },
+              ].map(({ value, label }) => (
+                <div key={label} className="min-w-0">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-5xl text-gold-400 leading-none">
+                    {value}
+                  </div>
+
+                  <div className="font-sans text-[10px] sm:text-xs text-charcoal-400 uppercase tracking-[0.18em] mt-2 leading-relaxed">
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
         </div>
       </div>
 
